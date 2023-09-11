@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div v-for="talk in this.fetchedAsk" v-bind:key="talk.id">{{ talk.title }}</div>
-  </div>
+    <div>
+        <div v-for="talk in this.fetchedAsk" v-bind:key="talk.id">{{ talk.title }}</div>
+    </div>
 </template>
 
 <script>
@@ -10,31 +10,31 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  // data() {
-  //   return {
-  //     ask: []
-  //   }
-  // },
-  computed: {
-    ...mapGetters([ 'fetchedAsk' ])
+    // data() {
+    //   return {
+    //     ask: []
+    //   }
+    // },
+    computed: {
+        ...mapGetters([ 'fetchedAsk' ])
 
-    //  # 2
-    // ...mapState({
-    //   fetchedAsk: state => state.ask
-    // }),
+        //  # 2
+        // ...mapState({
+        //   fetchedAsk: state => state.ask
+        // }),
 
-    // # 1
-    // ask() {
-    //   return this.$store.state.ask;
-    // }
-  },
-  created() {
-    this.$store.dispatch("FETCH_ASK");
-    // let vm = this;
-    // fetchAskList()
-    // .then(response => vm.ask = response.data)
-    // .catch(error => console.log(error));
-  }
+        // # 1
+        // ask() {
+        //   return this.$store.state.ask;
+        // }
+    },
+    created() {
+        this.$store.dispatch("FETCH_ASK");
+        // let vm = this;
+        // fetchAskList()
+        // .then(response => vm.ask = response.data)
+        // .catch(error => console.log(error));
+    }
 }
 </script>
 

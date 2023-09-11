@@ -1,6 +1,9 @@
 <template>
     <div>
-        <div v-for="talk in this.fetchedAsk" v-bind:key="talk.id">{{ talk.title }}</div>
+        <p v-for="talk in this.fetchedAsk" v-bind:key="talk.id">
+            <a v-bind:href="talk.url">{{ talk.title }}</a>
+            <small>{{ talk.url }} by {{ talk.user }}</small>
+        </p>
     </div>
 </template>
 

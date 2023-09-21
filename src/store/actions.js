@@ -1,4 +1,4 @@
-import { fetchNewsList, fetchJobsList, fetchAskList } from '../api/index';
+import { fetchNewsList, fetchJobsList, fetchAskList, fetchUserInfo } from '../api/index';
 
 export default {
     // mutations에 접근할 수 있게 context 인자를 제공함
@@ -44,4 +44,15 @@ export default {
             console.log(error);
         });
     },
+
+    FETCH_USER({ commit }, userName) {
+        fetchUserInfo(userName)
+        .then(({ data }) => {
+            console.log(data);
+            commit('SET_USER', data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
 }
